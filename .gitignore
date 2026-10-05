@@ -1,0 +1,34 @@
+# Dependencies
+node_modules/
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Build / bundler output
+dist/
+build/
+.cache/
+.parcel-cache/
+
+# Diagnostic / tooling scratch
+_opt/
+_opt.ps1
+
+# Source images kept locally but not referenced by the site.
+# These are large originals; do not commit them to the repo.
+_unused/
+*.log
+npm-debug.log*
+
+# Environment & secrets
+.env
+.env.local
+.env.*.local
+
+# OS / editor cruft
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
+*.swp

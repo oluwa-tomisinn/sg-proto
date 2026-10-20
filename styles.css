@@ -438,12 +438,48 @@ a{
 .publishing .sec-head p{max-width:720px;margin:16px auto 0}
 .pub-head{display:flex;justify-content:space-between;align-items:flex-end;gap:32px;margin-bottom:48px}
 .pub-head h2{font-size:clamp(32px,4vw,50px);font-weight:800;text-transform:uppercase}
-.pub-head h2 span{color:var(--blue)}
-.pub-head p{max-width:360px;border-left:3px solid var(--orange);padding-left:18px}
-.pub-grid{display:grid;grid-template-columns:1fr;column-gap:clamp(36px,5vw,72px);row-gap:36px;align-items:start;margin-bottom:52px}
-.pub-copy{display:flex;flex-direction:column;align-items:center;gap:22px;text-align:center}
-.pub-lead{font-size:clamp(18px,1.5vw,20px);line-height:1.75;color:#33475e;font-weight:500;max-width:720px;text-align:center}
-.pub-media{position:relative;overflow:hidden;min-height:440px}
+.pub-head h2 span{
+    color:var(--blue)
+}
+
+.pub-head p{
+    max-width:360px;
+    border-left:3px solid var(--orange);
+    padding-left:18px
+}
+
+.pub-grid{
+    display:grid;
+    grid-template-columns:1fr;
+    column-gap:clamp(36px,5vw,72px);
+    row-gap:36px;
+    align-items:start;
+    margin-bottom:52px
+}
+
+.pub-copy{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:22px;
+    text-align:center
+}
+
+.pub-lead{
+    font-size:clamp(18px,1.5vw,20px);
+    line-height:1.75;
+    color:#33475e;
+    font-weight:500;
+    max-width:720px;
+    text-align:center
+}
+
+.pub-media{
+    position:relative;
+    overflow:hidden;
+    min-height:440px
+}
+
 .pub-media img{width:100%;height:100%;min-height:440px;object-fit:cover;transition:transform .5s}
 .pub-media:hover img{transform:scale(1.03)}
 .pub-note{position:absolute;left:24px;right:24px;bottom:24px;background:#fff;color:var(--navy);padding:16px 22px;border-left:4px solid var(--blue)}
@@ -482,6 +518,8 @@ a{
 .pub-pipe:nth-child(3n)::after{display:grid}
 .pub-note{left:16px;right:16px;bottom:16px}
 }
+/* remove all arrows in the publishing pipeline */
+.pub-pipe:not(:last-child)::after{display:none}
 /*CONTACT*/
 .contact{background:var(--soft);border-top:1px solid var(--border)}
 .cta-panel{background:var(--navy);color:#d6e7f3;padding:clamp(36px,4.5vw,56px);margin-bottom:36px;position:relative;overflow:hidden}
@@ -498,8 +536,8 @@ a{
 .contact-detail .ci-label{display:block;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#00CCFF;font-weight:800;margin-bottom:4px}
 .contact-detail .ci{margin-bottom:10px;font-size:14px}
 /*FOOTER*/
-.footer{background:var(--navy);color:#a9bfd2}
-.footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1.2fr;gap:40px;padding:90px 0 90px}
+.footer{background:var(--deep);color:#a9bfd2}
+.footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1.2fr;gap:40px;padding:90px var(--pad) 90px}
 .brand-light .brand-text strong{color:#fff}
 .brand-light .brand-text em{color:#9fd4ef}
 /*footer logo: square badge, so constrain by height rather than the header's wide ratio*/
@@ -712,7 +750,7 @@ html{scroll-behavior:auto}
 .field textarea{font-size:16px}/*prevents iOS Safari auto-zoom on focus*/
 
 /*footer + floating bits*/
-.footer-grid{padding:56px 0 36px;gap:30px}
+.footer-grid{padding:56px var(--pad) 36px;gap:30px}
 }
 /*touch devices have no hover, so keep the project "view" affordance visible*/
 @media(hover:none){
